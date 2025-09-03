@@ -220,9 +220,9 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👨‍💻 Author
 
 **Abhijeet Ekka**
-- GitHub: [@Avyjt](https://github.com/Avyjt)
-- LinkedIn: [Abhijeet Ekka](https://linkedin.com/in/abhijeet-ekka)
-- Email: abhijeet.ekka@email.com
+- GitHub: [@Avyjt]([https://github.com/Avyjt](https://github.com/abhijeet-ekka))
+- LinkedIn: [Abhijeet Ekka](https://linkedin.com/in/abhijeetekka)
+- Email: abhijeetekka.dev@email.com
 
 ## 🙏 Acknowledgments
 
@@ -243,5 +243,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **⭐ If you found this project helpful, please give it a star!**
+
 
 *Built with ❤️ and cutting-edge web technologies*
