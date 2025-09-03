@@ -1088,6 +1088,7 @@ body::before {
   body {
     cursor: auto;
   }
+}
 
 @media (max-width: 480px) {
   .navbar {
@@ -1122,6 +1123,7 @@ body::before {
   body {
     cursor: auto;
   }
+}
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
