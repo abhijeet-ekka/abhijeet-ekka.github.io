@@ -90,8 +90,8 @@ As I begin my journey in web development, I'm open to:
 - Collaboration on interesting projects
 
 - **GitHub**: [@abhijeet-ekka](https://github.com/abhijeet-ekka)
-- **LinkedIn**: [Abhijeet Ekka](https://linkedin.com/in/abhijeet-ekka)
-- **Email**: You can reach me at my email address
+- **LinkedIn**: [Abhijeet Ekka](https://linkedin.com/in/abhijeetekka)
+- **Email**: (abhijeetekka.dev@gmail.com)
 
 ## 🙏 Thanks
 
@@ -102,3 +102,4 @@ Big thanks to the Three.js team and the web development community for all the am
 **⭐ If you found this project helpful, please give it a star!**
 
 *Built with ❤️ and cutting-edge web technologies*
+
