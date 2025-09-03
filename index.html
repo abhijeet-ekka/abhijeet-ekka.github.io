@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijeet Ekka - 3D Portfolio</title>
+    <meta name="description" content="Interactive 3D Portfolio of Abhijeet Ekka - Full Stack Developer">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="loading-cube"></div>
+            </div>
+            <div class="loading-text">
+                <h2>Loading Experience</h2>
+                <div class="loading-progress">
+                    <div class="loading-bar"></div>
+                </div>
+                <p class="loading-percentage">0%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <span class="brand-text">AE</span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+                <a href="#home" class="nav-link" data-section="home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link" data-section="about">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <!-- Three.js Canvas Container -->
+    <div id="three-container" class="three-container"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section section-transition">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line" data-text="Abhijeet">Abhijeet</span>
+                        <span class="title-line" data-text="Ekka">Ekka</span>
+                    </h1>
+                    <p class="hero-subtitle">Full Stack Developer & 3D Web Enthusiast</p>
+                    <p class="hero-description">
+                        Crafting immersive digital experiences with cutting-edge web technologies
+                    </p>
+                    <div class="hero-cta">
+                        <button class="cta-button primary" data-section="projects">
+                            <span>View Projects</span>
+                            <div class="button-glow"></div>
+                        </button>
+                        <button class="cta-button secondary" data-section="contact">
+                            <span>Get in Touch</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">Satisfied Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section section-transition">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passionate developer creating tomorrow's web experiences</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="about-card glass-card">
+                            <h3>My Story</h3>
+                            <p>
+                                I'm a passionate full-stack developer with a love for creating immersive web experiences. 
+                                My journey began with curiosity about how websites work and evolved into a deep passion 
+                                for pushing the boundaries of what's possible on the web.
+                            </p>
+                            <p>
+                                Specializing in modern JavaScript frameworks, 3D web development, and cutting-edge 
+                                technologies, I bring ideas to life through code. Every project is an opportunity 
+                                to innovate and create something extraordinary.
+                            </p>
+                        </div>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🎯</div>
+                                <h4>Focus</h4>
+                                <p>Creating performant, accessible, and visually stunning web applications</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🚀</div>
+                                <h4>Innovation</h4>
+                                <p>Always exploring new technologies and pushing creative boundaries</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🤝</div>
+                                <h4>Collaboration</h4>
+                                <p>Working closely with clients to bring their visions to reality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section section-transition">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">The tools and technologies I work with</p>
+                </div>
+                <div class="skills-content">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="javascript">
+                                <div class="skill-icon">JS</div>
+                                <span>JavaScript</span>
+                                <div class="skill-level" data-level="95"></div>
+                            </div>
+                            <div class="skill-item" data-skill="react">
+                                <div class="skill-icon">⚛️</div>
+                                <span>React</span>
+                                <div class="skill-level" data-level="90"></div>
+                            </div>
+                            <div class="skill-item" data-skill="threejs">
+                                <div class="skill-icon">🎮</div>
+                                <span>Three.js</span>
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                            <div class="skill-item" data-skill="css">
+                                <div class="skill-icon">🎨</div>
+                                <span>CSS3</span>
+                                <div class="skill-level" data-level="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="nodejs">
+                                <div class="skill-icon">🟢</div>
+                                <span>Node.js</span>
+                                <div class="skill-level" data-level="88"></div>
+                            </div>
+                            <div class="skill-item" data-skill="python">
+                                <div class="skill-icon">🐍</div>
+                                <span>Python</span>
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                            <div class="skill-item" data-skill="mongodb">
+                                <div class="skill-icon">🍃</div>
+                                <span>MongoDB</span>
+                                <div class="skill-level" data-level="80"></div>
+                            </div>
+                            <div class="skill-item" data-skill="postgresql">
+                                <div class="skill-icon">🐘</div>
+                                <span>PostgreSQL</span>
+                                <div class="skill-level" data-level="82"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section section-transition">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A showcase of my recent work and innovations</p>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card glass-card" data-project="1">
+                        <div class="project-image">
+                            <div class="project-placeholder">🌐</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">3D E-Commerce Platform</h3>
+                            <p class="project-description">
+                                An immersive 3D shopping experience built with Three.js and React, 
+                                featuring interactive product visualization and smooth animations.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Three.js</span>
+                                <span class="tech-tag">Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card glass-card" data-project="2">
+                        <div class="project-image">
+                            <div class="project-placeholder">🎵</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Music Visualizer App</h3>
+                            <p class="project-description">
+                                Real-time audio visualization with dynamic 3D particle systems that respond 
+                                to music frequency and amplitude data.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Web Audio API</span>
+                                <span class="tech-tag">Three.js</span>
+                                <span class="tech-tag">GLSL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card glass-card" data-project="3">
+                        <div class="project-image">
+                            <div class="project-placeholder">🏠</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Virtual Real Estate Tour</h3>
+                            <p class="project-description">
+                                Interactive 3D property tours with realistic lighting, materials, 
+                                and virtual reality support for immersive experiences.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Three.js</span>
+                                <span class="tech-tag">WebXR</span>
+                                <span class="tech-tag">Blender</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section section-transition">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's create something amazing together</p>
+                </div>
+                <div class="contact-content-centered">
+                    <div class="contact-info-centered">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:abhijeetekka.dev@gamil.com" class="contact-link">abhijeetekka.dev@gamil.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/abhijeetekka" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/abhijeetekka</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🔗</div>
+                            <div class="contact-details">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/abhijeet-ekka" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/abhijeet-ekka</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact form hidden for now -->
+                    <!--
+                    <form class="contact-form glass-card" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            <span>Send Message</span>
+                            <div class="button-glow"></div>
+                        </button>
+                    </form>
+                    -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Abhijeet Ekka. Crafted with ❤️ and Three.js</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
